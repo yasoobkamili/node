@@ -1,1 +1,1 @@
-1. This repository is focused on building seva using js 
+1. life is just about "seva"
