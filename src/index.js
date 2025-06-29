@@ -45,7 +45,7 @@ app.post("/signup", async (req, res) => {
   });
 
   if (existingUser) {
-    return res.send("User already exists. Koi aur naam rakho.");
+    return res.status(409).json({ message: "User already exists!" });
   }
 
   // hashing password
@@ -60,7 +60,7 @@ app.post("/signup", async (req, res) => {
   const newUser = await collection.insertMany(data);
   console.log("User registered:", newUser);
 
-  res.render("signupsuccess");
+  res.render("signin");
 });
 
 // dignin functionality
