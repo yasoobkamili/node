@@ -1,5 +1,5 @@
 const User = require("../models/user");
-const path = require("path");
+const bcrypt = require("bcrypt");
 
 function handleGetHomePage(req, res) {
   res.render("seva");
@@ -46,7 +46,7 @@ async function handleSignUp(req, res) {
   delete data.confirmPassword;
 
   // adding user to mogodb
-  const newUser = await User.insertMany(data);
+  const newUser = await User.create(data);
   console.log("User registered:", newUser);
 
   res.render("signin");
@@ -69,7 +69,7 @@ async function handleSignIn(req, res) {
     if (isPasswordMatch) {
       return res.render("home");
     } else {
-      return res.send("wrong password entered");
+      return res.status(401).send("Wrong Password Entered!");
     }
   } catch (error) {
     console.error("Signin error:", error);
