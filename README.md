@@ -1,1 +1,1 @@
-1. life is just about "seva"
+1. life is all about "seva"
