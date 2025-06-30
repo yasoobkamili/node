@@ -1,7 +1,6 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "description": "nodejs tutorials",
   "main": "hello.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +9,7 @@
   "keywords": [
     "none"
   ],
-  "author": "yasoob",
+  "author": "seva team",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^6.0.0",

@@ -1,9 +1,15 @@
 const express = require("express");
 const path = require("path");
 const bcrypt = require("bcrypt");
-const collection = require("./config");
+const User = require("../models/user");
+const { connectMongoDB } = require("./config");
 
 const app = express();
+
+//mongodb connection {status:"working", lastUpdated: "30June25/1605hrs"
+connectMongoDB("mongodb://localhost:27017/seva")
+  .then(() => console.log("MongoDB connected successfully"))
+  .catch(() => console.log(`Failed to connect to MongoDB`));
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -40,7 +46,7 @@ app.post("/signup", async (req, res) => {
   }
 
   // cneck if user already exists
-  const existingUser = await collection.findOne({
+  const existingUser = await User.findOne({
     $or: [{ email: data.email }, { phoneNo: data.phoneNo }],
   });
 
@@ -57,7 +63,7 @@ app.post("/signup", async (req, res) => {
   delete data.confirmPassword;
 
   // adding user to mogodb
-  const newUser = await collection.insertMany(data);
+  const newUser = await User.insertMany(data);
   console.log("User registered:", newUser);
 
   res.render("signin");
@@ -67,7 +73,7 @@ app.post("/signup", async (req, res) => {
 app.post("/signin", async (req, res) => {
   console.log(req.body.email);
   try {
-    const email = await collection.findOne({ email: req.body.email });
+    const email = await User.findOne({ email: req.body.email });
 
     if (!email) {
       return res.send("user email not found");
