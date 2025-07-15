@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEVA - Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --light-gray: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f1f5f9;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo i {
+            margin-right: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* User Dropdown */
+        .user-dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .user-dropbtn {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+        }
+
+        .user-dropbtn:hover, 
+        .user-dropbtn:focus {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+            outline: none;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            min-width: 240px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            border-radius: 8px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-10px);
+            visibility: hidden;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .user-dropdown:hover .dropdown-content,
+        .user-dropdown:focus-within .dropdown-content {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        .dropdown-content a {
+            color: #1e293b;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.25s ease;
+            font-weight: 500;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f5f9;
+            padding-left: 24px;
+            border-left: 3px solid #2563eb;
+        }
+
+        .dropdown-content a i {
+            width: 20px;
+            text-align: center;
+            color: #64748b;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content a:hover i {
+            color: #2563eb;
+            transform: scale(1.1);
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #e2e8f0;
+            margin: 6px 0;
+        }
+
+        .logout-link {
+            color: #ef4444 !important;
+        }
+
+        .logout-link:hover {
+            background-color: #fef2f2 !important;
+            border-left: 3px solid #ef4444 !important;
+        }
+
+        .logout-link i {
+            color: #ef4444 !important;
+        }
+
+        /* Settings Section */
+        .settings-container {
+            padding: 5rem 0 3rem;
+        }
+
+        .settings-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .settings-header h1 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .settings-header p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .settings-content {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 2.5rem;
+        }
+
+        @media (max-width: 992px) {
+            .settings-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Settings Sidebar */
+        .settings-sidebar {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .settings-menu {
+            list-style: none;
+        }
+
+        .settings-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .settings-menu a {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--dark);
+            transition: var(--transition);
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        .settings-menu a:hover, .settings-menu a.active {
+            background: #f1f5f9;
+            color: var(--primary);
+        }
+
+        .settings-menu a.active {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .settings-menu a i {
+            width: 24px;
+            text-align: center;
+        }
+
+        /* Settings Main */
+        .settings-main {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Account Settings */
+        .settings-section {
+            margin-bottom: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.8rem;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Security Settings */
+        .security-item {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .security-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .security-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .security-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .security-text p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Notification Settings */
+        .notification-item {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .notification-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .notification-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .notification-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .notification-text p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            max-width: 600px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Payment Methods */
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .payment-card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.8rem;
+            border: 2px solid #e2e8f0;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .payment-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .payment-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .payment-card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .payment-card-details {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-card-details div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .payment-card-details span:first-child {
+            color: var(--gray);
+        }
+
+        .payment-card-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .add-payment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .add-payment:hover {
+            color: var(--primary);
+        }
+
+        .add-payment i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Privacy Settings */
+        .privacy-item {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .privacy-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+
+        .privacy-header h3 {
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .privacy-content {
+            padding-top: 1rem;
+            display: none;
+        }
+
+        .privacy-content.active {
+            display: block;
+        }
+
+        .privacy-content p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .settings-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>SEVA</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#download">Download App</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="user-dropdown">
+                <button class="user-dropbtn" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle"></i>
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" role="menu">
+                    <a href="#" role="menuitem">
+                        <i class="fas fa-user"></i>
+                        <span>My Profile</span>
+                    </a>
+                    <a href="#" role="menuitem">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>My Bookings</span>
+                    </a>
+                    <a href="#" role="menuitem" class="active">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                    <div class="divider"></div>
+                    <a href="#" class="logout-link" role="menuitem">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="settings-container">
+        <div class="container">
+            <div class="settings-header">
+                <h1>Account Settings</h1>
+                <p>Manage your preferences, security, and personal information</p>
+            </div>
+
+            <div class="settings-content">
+                <div class="settings-sidebar">
+                    <ul class="settings-menu">
+                        <li><a href="#account" class="active"><i class="fas fa-user-cog"></i> Account</a></li>
+                        <li><a href="#security"><i class="fas fa-shield-alt"></i> Security</a></li>
+                        <li><a href="#notifications"><i class="fas fa-bell"></i> Notifications</a></li>
+                        <li><a href="#payment"><i class="fas fa-credit-card"></i> Payment Methods</a></li>
+                        <li><a href="#privacy"><i class="fas fa-lock"></i> Privacy</a></li>
+                        <li><a href="#preferences"><i class="fas fa-sliders-h"></i> Preferences</a></li>
+                        <li><a href="#language"><i class="fas fa-globe"></i> Language</a></li>
+                        <li><a href="#help"><i class="fas fa-question-circle"></i> Help & Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="settings-main">
+                    <!-- Account Settings -->
+                    <div id="account" class="settings-section">
+                        <div class="section-title">
+                            <h2>Account Information</h2>
+                            <button class="btn btn-primary">Save Changes</button>
+                        </div>
+
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" class="form-control" value="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" class="form-control" value="Doe">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" value="john.doe@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" value="+91 9876543210">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <textarea id="address" class="form-control" rows="3">123 Main Street, Mumbai, Maharashtra, 400001</textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Security Settings -->
+                    <div id="security" class="settings-section">
+                        <div class="section-title">
+                            <h2>Security Settings</h2>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="security-info">
+                                <div class="security-icon">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div class="security-text">
+                                    <h3>Password</h3>
+                                    <p>Last changed 3 months ago</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">Change Password</button>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="security-info">
+                                <div class="security-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="security-text">
+                                    <h3>Two-Factor Authentication</h3>
+                                    <p>Add an extra layer of security to your account</p>
+                                </div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="security-info">
+                                <div class="security-icon">
+                                    <i class="fas fa-shield-check"></i>
+                                </div>
+                                <div class="security-text">
+                                    <h3>Login Activity</h3>
+                                    <p>Review your recent login history</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">View Activity</button>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="security-info">
+                                <div class="security-icon">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <div class="security-text">
+                                    <h3>Account Deletion</h3>
+                                    <p>Permanently delete your account</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">Delete Account</button>
+                        </div>
+                    </div>
+
+                    <!-- Notification Settings -->
+                    <div id="notifications" class="settings-section">
+                        <div class="section-title">
+                            <h2>Notification Preferences</h2>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notification-info">
+                                <div class="notification-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="notification-text">
+                                    <h3>Booking Updates</h3>
+                                    <p>Get notified about booking confirmations, changes, and reminders</p>
+                                </div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notification-info">
+                                <div class="notification-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="notification-text">
+                                    <h3>Promotions & Offers</h3>
+                                    <p>Receive special offers, discounts, and promotions</p>
+                                </div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notification-info">
+                                <div class="notification-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="notification-text">
+                                    <h3>Service Feedback</h3>
+                                    <p>Get notifications to rate and review completed services</p>
+                                </div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notification-info">
+                                <div class="notification-icon">
+                                    <i class="fas fa-comment-alt"></i>
+                                </div>
+                                <div class="notification-text">
+                                    <h3>Messages</h3>
+                                    <p>Receive notifications for new messages from professionals</p>
+                                </div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div id="payment" class="settings-section">
+                        <div class="section-title">
+                            <h2>Payment Methods</h2>
+                            <button class="btn btn-primary">Add New</button>
+                        </div>
+
+                        <div class="payment-methods">
+                            <div class="payment-card">
+                                <div class="payment-card-header">
+                                    <div class="payment-card-icon">
+                                        <i class="fab fa-cc-visa"></i>
+                                    </div>
+                                    <div class="payment-card-title">Visa</div>
+                                </div>
+                                <div class="payment-card-details">
+                                    <div>
+                                        <span>Card Number</span>
+                                        <span>•••• 4235</span>
+                                    </div>
+                                    <div>
+                                        <span>Expiry Date</span>
+                                        <span>08/2025</span>
+                                    </div>
+                                    <div>
+                                        <span>Card Holder</span>
+                                        <span>John Doe</span>
+                                    </div>
+                                </div>
+                                <div class="payment-card-actions">
+                                    <button class="btn btn-outline">Edit</button>
+                                    <button class="btn btn-outline">Remove</button>
+                                </div>
+                            </div>
+
+                            <div class="payment-card">
+                                <div class="payment-card-header">
+                                    <div class="payment-card-icon">
+                                        <i class="fab fa-paypal"></i>
+                                    </div>
+                                    <div class="payment-card-title">PayPal</div>
+                                </div>
+                                <div class="payment-card-details">
+                                    <div>
+                                        <span>Account</span>
+                                        <span>john.doe@example.com</span>
+                                    </div>
+                                    <div>
+                                        <span>Status</span>
+                                        <span>Connected</span>
+                                    </div>
+                                </div>
+                                <div class="payment-card-actions">
+                                    <button class="btn btn-outline">Edit</button>
+                                    <button class="btn btn-outline">Remove</button>
+                                </div>
+                            </div>
+
+                            <div class="payment-card add-payment">
+                                <div>
+                                    <i class="fas fa-plus-circle"></i>
+                                    <h3>Add Payment Method</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Settings -->
+                    <div id="privacy" class="settings-section">
+                        <div class="section-title">
+                            <h2>Privacy Settings</h2>
+                        </div>
+
+                        <div class="privacy-item">
+                            <div class="privacy-header">
+                                <h3><i class="fas fa-user-friends"></i> Profile Visibility</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="privacy-content">
+                                <p>Control who can see your profile information and activity on SEVA</p>
+                                <div class="form-group">
+                                    <label>Profile Visibility</label>
+                                    <select class="form-control">
+                                        <option>Public</option>
+                                        <option>Only SEVA Professionals</option>
+                                        <option>Private</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="privacy-item">
+                            <div class="privacy-header">
+                                <h3><i class="fas fa-map-marker-alt"></i> Location Sharing</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="privacy-content">
+                                <p>Manage how SEVA uses your location information for service professionals</p>
+                                <div class="form-group">
+                                    <label>Location Sharing</label>
+                                    <select class="form-control">
+                                        <option>Share while using the app</option>
+                                        <option>Share only when booking</option>
+                                        <option>Never share</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="privacy-item">
+                            <div class="privacy-header">
+                                <h3><i class="fas fa-ad"></i> Advertising Preferences</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="privacy-content">
+                                <p>Control how we use your data to personalize ads</p>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox"> Allow personalized ads
+                                    </label>
+                                    <p class="small">You'll still see ads, but they may be less relevant to you</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle privacy sections
+        document.querySelectorAll('.privacy-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.classList.toggle('active');
+                
+                const icon = header.querySelector('.fa-chevron-down');
+                if (content.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Initialize first privacy section as open
+        document.querySelector('.privacy-content').classList.add('active');
+        document.querySelector('.privacy-header .fa-chevron-down').classList.replace('fa-chevron-down', 'fa-chevron-up');
+    </script>
+</body>
+</html>
