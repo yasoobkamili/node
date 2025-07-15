@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEVA - My Bookings</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #2563eb;
@@ -33,7 +36,10 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: "Montserrat", sans-serif;
             font-weight: 700;
             line-height: 1.2;
@@ -128,7 +134,7 @@
             box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
         }
 
-        .user-dropbtn:hover, 
+        .user-dropbtn:hover,
         .user-dropbtn:focus {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
@@ -296,7 +302,8 @@
             font-weight: 500;
         }
 
-        .filter-options a:hover, .filter-options a.active {
+        .filter-options a:hover,
+        .filter-options a.active {
             background: #f1f5f9;
             color: var(--primary);
         }
@@ -592,7 +599,8 @@
             transition: var(--transition);
         }
 
-        .page-link:hover, .page-link.active {
+        .page-link:hover,
+        .page-link.active {
             background: var(--primary);
             color: white;
         }
@@ -622,6 +630,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container header-container">
@@ -629,7 +638,7 @@
                 <i class="fas fa-hands-helping"></i>
                 <span>SEVA</span>
             </div>
-            
+
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -638,22 +647,22 @@
                 <li><a href="#download">Download App</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            
+
             <div class="user-dropdown">
                 <button class="user-dropbtn" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user-circle"></i>
                     <i class="fas fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content" role="menu">
-                    <a href="#" role="menuitem">
+                    <a href="/myprofile" role="menuitem">
                         <i class="fas fa-user"></i>
                         <span>My Profile</span>
                     </a>
-                    <a href="#" role="menuitem" class="active">
+                    <a href="/mybookings" role="menuitem" class="active">
                         <i class="fas fa-calendar-alt"></i>
                         <span>My Bookings</span>
                     </a>
-                    <a href="#" role="menuitem">
+                    <a href="/settings" role="menuitem">
                         <i class="fas fa-cog"></i>
                         <span>Settings</span>
                     </a>
@@ -677,29 +686,36 @@
             <div class="bookings-content">
                 <div class="filters-sidebar">
                     <h2 class="filters-title">Filters</h2>
-                    
+
                     <div class="filter-group">
                         <h3>Booking Status</h3>
                         <ul class="filter-options">
-                            <li><a href="#" class="active"><i class="fas fa-list"></i> All Bookings <span class="badge">12</span></a></li>
+                            <li><a href="#" class="active"><i class="fas fa-list"></i> All Bookings <span
+                                        class="badge">12</span></a></li>
                             <li><a href="#"><i class="fas fa-clock"></i> Upcoming <span class="badge">3</span></a></li>
-                            <li><a href="#"><i class="fas fa-spinner"></i> In Progress <span class="badge">1</span></a></li>
-                            <li><a href="#"><i class="fas fa-check-circle"></i> Completed <span class="badge">7</span></a></li>
-                            <li><a href="#"><i class="fas fa-times-circle"></i> Cancelled <span class="badge">1</span></a></li>
+                            <li><a href="#"><i class="fas fa-spinner"></i> In Progress <span class="badge">1</span></a>
+                            </li>
+                            <li><a href="#"><i class="fas fa-check-circle"></i> Completed <span
+                                        class="badge">7</span></a></li>
+                            <li><a href="#"><i class="fas fa-times-circle"></i> Cancelled <span
+                                        class="badge">1</span></a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="filter-group">
                         <h3>Service Type</h3>
                         <ul class="filter-options">
-                            <li><a href="#"><i class="fas fa-broom"></i> Home Cleaning <span class="badge">5</span></a></li>
+                            <li><a href="#"><i class="fas fa-broom"></i> Home Cleaning <span class="badge">5</span></a>
+                            </li>
                             <li><a href="#"><i class="fas fa-faucet"></i> Plumbing <span class="badge">3</span></a></li>
                             <li><a href="#"><i class="fas fa-tshirt"></i> Laundry <span class="badge">2</span></a></li>
-                            <li><a href="#"><i class="fas fa-tools"></i> Electrical <span class="badge">1</span></a></li>
-                            <li><a href="#"><i class="fas fa-paint-roller"></i> Painting <span class="badge">1</span></a></li>
+                            <li><a href="#"><i class="fas fa-tools"></i> Electrical <span class="badge">1</span></a>
+                            </li>
+                            <li><a href="#"><i class="fas fa-paint-roller"></i> Painting <span
+                                        class="badge">1</span></a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="filter-group">
                         <h3>Time Period</h3>
                         <ul class="filter-options">
@@ -709,7 +725,7 @@
                             <li><a href="#"><i class="fas fa-calendar"></i> All Time</a></li>
                         </ul>
                     </div>
-                    
+
                     <button class="btn btn-outline" style="width: 100%;">
                         <i class="fas fa-sync-alt"></i> Reset Filters
                     </button>
@@ -723,7 +739,7 @@
                             <input type="text" placeholder="Search bookings...">
                         </div>
                     </div>
-                    
+
                     <div class="bookings-list">
                         <div class="booking-card">
                             <div class="booking-header">
@@ -748,10 +764,11 @@
                                     <span class="detail-value">₹1,499</span>
                                 </div>
                             </div>
-                            
+
                             <div class="professional-info">
                                 <div class="professional-avatar">
-                                    <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=500" alt="Professional">
+                                    <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=500"
+                                        alt="Professional">
                                 </div>
                                 <div class="professional-details">
                                     <h4>Rajesh Kumar</h4>
@@ -763,7 +780,7 @@
                                     </p>
                                 </div>
                             </div>
-                            
+
                             <div class="booking-actions">
                                 <button class="btn btn-outline">View Details</button>
                                 <button class="btn btn-primary">Reschedule</button>
@@ -771,7 +788,7 @@
                                 <button class="btn btn-outline">Message</button>
                             </div>
                         </div>
-                        
+
                         <div class="booking-card">
                             <div class="booking-header">
                                 <div class="booking-title">Plumbing Service</div>
@@ -795,10 +812,11 @@
                                     <span class="detail-value">₹2,299</span>
                                 </div>
                             </div>
-                            
+
                             <div class="professional-info">
                                 <div class="professional-avatar">
-                                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=500" alt="Professional">
+                                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=500"
+                                        alt="Professional">
                                 </div>
                                 <div class="professional-details">
                                     <h4>Vikram Singh</h4>
@@ -810,14 +828,14 @@
                                     </p>
                                 </div>
                             </div>
-                            
+
                             <div class="booking-actions">
                                 <button class="btn btn-outline">View Details</button>
                                 <button class="btn btn-outline">Track Professional</button>
                                 <button class="btn btn-outline">Message</button>
                             </div>
                         </div>
-                        
+
                         <div class="booking-card">
                             <div class="booking-header">
                                 <div class="booking-title">Home Cleaning</div>
@@ -841,10 +859,11 @@
                                     <span class="detail-value">₹1,499</span>
                                 </div>
                             </div>
-                            
+
                             <div class="professional-info">
                                 <div class="professional-avatar">
-                                    <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=500" alt="Professional">
+                                    <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=500"
+                                        alt="Professional">
                                 </div>
                                 <div class="professional-details">
                                     <h4>Rajesh Kumar</h4>
@@ -856,7 +875,7 @@
                                     </p>
                                 </div>
                             </div>
-                            
+
                             <div class="booking-actions">
                                 <button class="btn btn-outline">View Details</button>
                                 <button class="btn btn-primary">Book Again</button>
@@ -864,7 +883,7 @@
                                 <button class="btn btn-outline">Download Invoice</button>
                             </div>
                         </div>
-                        
+
                         <div class="booking-card">
                             <div class="booking-header">
                                 <div class="booking-title">Electrical Repair</div>
@@ -888,10 +907,11 @@
                                     <span class="detail-value">₹1,799</span>
                                 </div>
                             </div>
-                            
+
                             <div class="professional-info">
                                 <div class="professional-avatar">
-                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=500" alt="Professional">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=500"
+                                        alt="Professional">
                                 </div>
                                 <div class="professional-details">
                                     <h4>Priya Sharma</h4>
@@ -903,7 +923,7 @@
                                     </p>
                                 </div>
                             </div>
-                            
+
                             <div class="booking-actions">
                                 <button class="btn btn-outline">View Details</button>
                                 <button class="btn btn-primary">Book Again</button>
@@ -912,7 +932,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="pagination">
                         <div class="page-item">
                             <a href="#" class="page-link"><i class="fas fa-chevron-left"></i></a>
@@ -935,4 +955,5 @@
         </div>
     </div>
 </body>
+
 </html>

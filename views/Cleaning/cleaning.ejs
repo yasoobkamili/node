@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-:root {
-        --primary: #2563eb;
-        --primary-light: #3b82f6;
-        --primary-dark: #1d4ed8;
-        --primary-transparent: rgba(37, 99, 235, 0.1);
-        --dark: #1e293b;
-        --darker: #0f172a;
-        --light: #f8fafc;
-        --light-gray: #e2e8f0;
-        --medium-gray: #94a3b8;
-        --white: #ffffff;
-        --black: #0a0a0a;
-        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-          0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        --transition: all 0.3s ease;
-        --border-radius: 16px;
-      }
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --primary-dark: #1d4ed8;
+      --primary-transparent: rgba(37, 99, 235, 0.1);
+      --dark: #1e293b;
+      --darker: #0f172a;
+      --light: #f8fafc;
+      --light-gray: #e2e8f0;
+      --medium-gray: #94a3b8;
+      --white: #ffffff;
+      --black: #0a0a0a;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s ease;
+      --border-radius: 16px;
+    }
 
     * {
       margin: 0;
@@ -170,12 +171,10 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-      );
+      background: linear-gradient(120deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent);
       transform: translateX(-100%);
       transition: transform 0.6s ease;
     }
@@ -193,7 +192,7 @@
     .btn-outline {
       background: transparent;
       border: 2px solid var(--primary);
-     
+
     }
 
     .btn-outline:hover {
@@ -202,11 +201,9 @@
     }
 
     .service-header {
-      background: linear-gradient(
-        135deg,
-        var(--primary) 0%,
-        var(--primary-dark) 100%
-      );
+      background: linear-gradient(135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%);
       color: var(--white);
       padding: 120px 0 100px;
       text-align: center;
@@ -220,9 +217,11 @@
       0% {
         background-position: 0% 50%;
       }
+
       50% {
         background-position: 100% 50%;
       }
+
       100% {
         background-position: 0% 50%;
       }
@@ -244,9 +243,11 @@
       0% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(-20px);
       }
+
       100% {
         transform: translateY(0);
       }
@@ -286,6 +287,7 @@
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -296,9 +298,11 @@
       0% {
         transform: translateY(0px);
       }
+
       50% {
         transform: translateY(-10px);
       }
+
       100% {
         transform: translateY(0px);
       }
@@ -367,12 +371,15 @@
     .feature-card:nth-child(1) {
       animation-delay: 0.1s;
     }
+
     .feature-card:nth-child(2) {
       animation-delay: 0.2s;
     }
+
     .feature-card:nth-child(3) {
       animation-delay: 0.3s;
     }
+
     .feature-card:nth-child(4) {
       animation-delay: 0.4s;
     }
@@ -444,12 +451,15 @@
     .benefit-item:nth-child(1) {
       animation-delay: 0.6s;
     }
+
     .benefit-item:nth-child(2) {
       animation-delay: 0.7s;
     }
+
     .benefit-item:nth-child(3) {
       animation-delay: 0.8s;
     }
+
     .benefit-item:nth-child(4) {
       animation-delay: 0.9s;
     }
@@ -564,9 +574,11 @@
       0% {
         transform: scale(1);
       }
+
       50% {
         transform: scale(1.05);
       }
+
       100% {
         transform: scale(1);
       }
@@ -635,9 +647,11 @@
     .testimonial-card:nth-child(1) {
       animation-delay: 0.3s;
     }
+
     .testimonial-card:nth-child(2) {
       animation-delay: 0.5s;
     }
+
     .testimonial-card:nth-child(3) {
       animation-delay: 0.7s;
     }
@@ -726,15 +740,19 @@
     .faq-item:nth-child(1) {
       animation-delay: 0.2s;
     }
+
     .faq-item:nth-child(2) {
       animation-delay: 0.3s;
     }
+
     .faq-item:nth-child(3) {
       animation-delay: 0.4s;
     }
+
     .faq-item:nth-child(4) {
       animation-delay: 0.5s;
     }
+
     .faq-item:nth-child(5) {
       animation-delay: 0.6s;
     }
@@ -782,11 +800,9 @@
     }
 
     .stats-section {
-      background: linear-gradient(
-        135deg,
-        var(--primary) 0%,
-        var(--primary-dark) 100%
-      );
+      background: linear-gradient(135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%);
       color: var(--white);
       padding: 100px 0;
       text-align: center;
@@ -812,12 +828,15 @@
     .stat-item:nth-child(1) {
       animation-delay: 0.2s;
     }
+
     .stat-item:nth-child(2) {
       animation-delay: 0.4s;
     }
+
     .stat-item:nth-child(3) {
       animation-delay: 0.6s;
     }
+
     .stat-item:nth-child(4) {
       animation-delay: 0.8s;
     }
@@ -895,18 +914,23 @@
     .footer-links li:nth-child(1) {
       animation-delay: 0.1s;
     }
+
     .footer-links li:nth-child(2) {
       animation-delay: 0.2s;
     }
+
     .footer-links li:nth-child(3) {
       animation-delay: 0.3s;
     }
+
     .footer-links li:nth-child(4) {
       animation-delay: 0.4s;
     }
+
     .footer-links li:nth-child(5) {
       animation-delay: 0.5s;
     }
+
     .footer-links li:nth-child(6) {
       animation-delay: 0.6s;
     }
@@ -916,6 +940,7 @@
         opacity: 0;
         transform: translateX(-20px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
@@ -968,12 +993,15 @@
     .contact-info li:nth-child(1) {
       animation-delay: 0.1s;
     }
+
     .contact-info li:nth-child(2) {
       animation-delay: 0.2s;
     }
+
     .contact-info li:nth-child(3) {
       animation-delay: 0.3s;
     }
+
     .contact-info li:nth-child(4) {
       animation-delay: 0.4s;
     }
@@ -1009,12 +1037,15 @@
     .social-links a:nth-child(1) {
       animation-delay: 0.1s;
     }
+
     .social-links a:nth-child(2) {
       animation-delay: 0.2s;
     }
+
     .social-links a:nth-child(3) {
       animation-delay: 0.3s;
     }
+
     .social-links a:nth-child(4) {
       animation-delay: 0.4s;
     }
@@ -1242,6 +1273,7 @@
     }
   </style>
 </head>
+
 <body>
   <header id="mainHeader">
     <div class="container header-content">
@@ -1253,7 +1285,7 @@
       </a>
       <nav>
         <ul>
-          <li><a href="../main/seva.html">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="#services" class="active">Services</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
@@ -1284,10 +1316,14 @@
         <div class="service-details">
           <h2>Complete Cleaning Solutions</h2>
           <p>
-            SEVA offers professional cleaning services designed to keep your space spotless and healthy. Our trained cleaning specialists use eco-friendly products and advanced techniques to deliver exceptional results for homes, offices, and commercial spaces.
+            SEVA offers professional cleaning services designed to keep your space spotless and healthy. Our trained
+            cleaning specialists use eco-friendly products and advanced techniques to deliver exceptional results for
+            homes, offices, and commercial spaces.
           </p>
           <p>
-            We understand that a clean environment is essential for wellbeing and productivity. That's why we offer flexible scheduling, customized cleaning plans, and a satisfaction guarantee. Our team arrives equipped with everything needed to transform your space.
+            We understand that a clean environment is essential for wellbeing and productivity. That's why we offer
+            flexible scheduling, customized cleaning plans, and a satisfaction guarantee. Our team arrives equipped with
+            everything needed to transform your space.
           </p>
 
           <div class="service-features">
@@ -1375,7 +1411,8 @@
           </div>
 
           <p>
-            With customizable cleaning plans and attention to detail, SEVA is your trusted partner for all cleaning needs. Book online today and experience the difference of professional cleaning!
+            With customizable cleaning plans and attention to detail, SEVA is your trusted partner for all cleaning
+            needs. Book online today and experience the difference of professional cleaning!
           </p>
         </div>
 
@@ -1388,31 +1425,16 @@
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Your email"
-                required
-              />
+              <input type="email" id="email" placeholder="Your email" required />
             </div>
             <div class="form-group">
               <label for="phone">Phone</label>
-              <input
-                type="tel"
-                id="phone"
-                placeholder="Your phone number"
-                required
-              />
+              <input type="tel" id="phone" placeholder="Your phone number" required />
             </div>
 
             <div class="form-group">
               <label for="address">Full Address</label>
-              <input
-                type="text"
-                id="address"
-                placeholder="House no., Street, Area"
-                required
-              />
+              <input type="text" id="address" placeholder="House no., Street, Area" required />
             </div>
 
             <div class="form-group">
@@ -1432,18 +1454,9 @@
             <div class="form-group">
               <label for="location">Location Details</label>
               <div class="location-container">
-                <input
-                  type="text"
-                  id="location"
-                  class="location-input"
-                  placeholder="Enter your location or landmark"
-                  required
-                />
-                <button
-                  type="button"
-                  class="location-btn"
-                  id="detectLocation"
-                >
+                <input type="text" id="location" class="location-input" placeholder="Enter your location or landmark"
+                  required />
+                <button type="button" class="location-btn" id="detectLocation">
                   <i class="fas fa-location-dot"></i>
                 </button>
               </div>
@@ -1458,7 +1471,8 @@
               <div class="map-container">
                 <div id="map"></div>
                 <div class="map-overlay" id="mapOverlay">
-                  <i class="fas fa-map-marker-alt" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                  <i class="fas fa-map-marker-alt"
+                    style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
                   <p>Enter your location above or use the detect button to view your position on the map</p>
                 </div>
               </div>
@@ -1505,10 +1519,7 @@
             </div>
             <div class="form-group">
               <label for="message">Special Instructions</label>
-              <textarea
-                id="message"
-                placeholder="Any specific areas of focus or special requirements"
-              ></textarea>
+              <textarea id="message" placeholder="Any specific areas of focus or special requirements"></textarea>
             </div>
             <button type="submit" class="btn" style="width: 100%">
               Book Cleaning Service
@@ -1551,7 +1562,8 @@
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="testimonial-content">
-            "SEVA's cleaning team transformed my home! After years of struggling to keep up with cleaning while working full-time, I finally have a spotless house without the stress. They pay attention to every detail."
+            "SEVA's cleaning team transformed my home! After years of struggling to keep up with cleaning while working
+            full-time, I finally have a spotless house without the stress. They pay attention to every detail."
           </div>
           <div class="testimonial-author">
             <div class="author-avatar">PS</div>
@@ -1570,7 +1582,8 @@
         </div>
         <div class="testimonial-card">
           <div class="testimonial-content">
-            "Our office has never looked better! SEVA's commercial cleaning service has completely transformed our workspace. The team is professional, efficient, and always goes above and beyond."
+            "Our office has never looked better! SEVA's commercial cleaning service has completely transformed our
+            workspace. The team is professional, efficient, and always goes above and beyond."
           </div>
           <div class="testimonial-author">
             <div class="author-avatar">RK</div>
@@ -1589,7 +1602,8 @@
         </div>
         <div class="testimonial-card">
           <div class="testimonial-content">
-            "The move-out cleaning was worth every rupee! Our landlord returned our full deposit thanks to SEVA's thorough cleaning. They even cleaned areas I didn't know needed attention!"
+            "The move-out cleaning was worth every rupee! Our landlord returned our full deposit thanks to SEVA's
+            thorough cleaning. They even cleaned areas I didn't know needed attention!"
           </div>
           <div class="testimonial-author">
             <div class="author-avatar">AD</div>
@@ -1624,7 +1638,8 @@
           </div>
           <div class="faq-answer">
             <p>
-              We service all neighborhoods in Srinagar and surrounding areas. Contact us to confirm availability in your specific location.
+              We service all neighborhoods in Srinagar and surrounding areas. Contact us to confirm availability in your
+              specific location.
             </p>
           </div>
         </div>
@@ -1635,7 +1650,8 @@
           </div>
           <div class="faq-answer">
             <p>
-              Absolutely! We use only eco-friendly, non-toxic cleaning products that are safe for children, pets, and the environment.
+              Absolutely! We use only eco-friendly, non-toxic cleaning products that are safe for children, pets, and
+              the environment.
             </p>
           </div>
         </div>
@@ -1646,7 +1662,8 @@
           </div>
           <div class="faq-answer">
             <p>
-              No, our cleaning teams arrive fully equipped with all necessary supplies and equipment. We bring everything needed for a thorough clean.
+              No, our cleaning teams arrive fully equipped with all necessary supplies and equipment. We bring
+              everything needed for a thorough clean.
             </p>
           </div>
         </div>
@@ -1657,7 +1674,8 @@
           </div>
           <div class="faq-answer">
             <p>
-              Our regular cleaning includes dusting all surfaces, vacuuming and mopping floors, cleaning bathrooms and kitchens, wiping baseboards, and more. See our service list for details.
+              Our regular cleaning includes dusting all surfaces, vacuuming and mopping floors, cleaning bathrooms and
+              kitchens, wiping baseboards, and more. See our service list for details.
             </p>
           </div>
         </div>
@@ -1668,7 +1686,8 @@
           </div>
           <div class="faq-answer">
             <p>
-              Yes, we often have same-day availability depending on your location and the size of the job. Call us for immediate service.
+              Yes, we often have same-day availability depending on your location and the size of the job. Call us for
+              immediate service.
             </p>
           </div>
         </div>
@@ -1682,7 +1701,8 @@
         <div class="footer-column">
           <h3>About SEVA</h3>
           <p>
-            SEVA is a service platform connecting customers with trusted professionals for all daily household needs. Our mission is to make quality services accessible to everyone.
+            SEVA is a service platform connecting customers with trusted professionals for all daily household needs.
+            Our mission is to make quality services accessible to everyone.
           </p>
           <div class="social-links">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1733,10 +1753,8 @@
             </li>
             <li>
               <i class="fas fa-clock"></i>
-              <span
-                >Mon-Fri: 8:00 AM - 8:00 PM<br />Sat-Sun: 9:00 AM - 6:00
-                PM</span
-              >
+              <span>Mon-Fri: 8:00 AM - 8:00 PM<br />Sat-Sun: 9:00 AM - 6:00
+                PM</span>
             </li>
           </ul>
         </div>
@@ -1752,7 +1770,7 @@
     let map;
     let marker;
     let geocoder;
-    let defaultLocation = { lat: 34.0837, lng: 74.7973 }; 
+    let defaultLocation = { lat: 34.0837, lng: 74.7973 };
 
     function initMap() {
       map = new google.maps.Map(document.getElementById("map"), {
@@ -1785,7 +1803,7 @@
         geocodePosition(event.latLng);
       });
 
-      document.getElementById("location").addEventListener("change", function() {
+      document.getElementById("location").addEventListener("change", function () {
         geocodeAddress(this.value);
       });
     }
@@ -1973,7 +1991,10 @@
     const minDate = tomorrow.toISOString().split('T')[0];
     document.getElementById("date").min = minDate;
   </script>
-  
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&callback=initMap&libraries=places" async defer></script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&callback=initMap&libraries=places"
+    async defer></script>
 </body>
+
 </html>

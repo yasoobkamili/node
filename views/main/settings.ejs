@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEVA - Settings</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #2563eb;
@@ -33,7 +36,10 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: "Montserrat", sans-serif;
             font-weight: 700;
             line-height: 1.2;
@@ -128,7 +134,7 @@
             box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
         }
 
-        .user-dropbtn:hover, 
+        .user-dropbtn:hover,
         .user-dropbtn:focus {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
@@ -278,7 +284,8 @@
             font-weight: 500;
         }
 
-        .settings-menu a:hover, .settings-menu a.active {
+        .settings-menu a:hover,
+        .settings-menu a.active {
             background: #f1f5f9;
             color: var(--primary);
         }
@@ -512,11 +519,11 @@
             border-radius: 50%;
         }
 
-        input:checked + .slider {
+        input:checked+.slider {
             background-color: var(--primary);
         }
 
-        input:checked + .slider:before {
+        input:checked+.slider:before {
             transform: translateX(26px);
         }
 
@@ -655,6 +662,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container header-container">
@@ -662,7 +670,7 @@
                 <i class="fas fa-hands-helping"></i>
                 <span>SEVA</span>
             </div>
-            
+
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -671,22 +679,22 @@
                 <li><a href="#download">Download App</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            
+
             <div class="user-dropdown">
                 <button class="user-dropbtn" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user-circle"></i>
                     <i class="fas fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content" role="menu">
-                    <a href="#" role="menuitem">
+                    <a href="/myprofile" role="menuitem">
                         <i class="fas fa-user"></i>
                         <span>My Profile</span>
                     </a>
-                    <a href="#" role="menuitem">
+                    <a href="/mybookings" role="menuitem">
                         <i class="fas fa-calendar-alt"></i>
                         <span>My Bookings</span>
                     </a>
-                    <a href="#" role="menuitem" class="active">
+                    <a href="/settings" role="menuitem">
                         <i class="fas fa-cog"></i>
                         <span>Settings</span>
                     </a>
@@ -753,7 +761,8 @@
 
                             <div class="form-group">
                                 <label for="address">Address</label>
-                                <textarea id="address" class="form-control" rows="3">123 Main Street, Mumbai, Maharashtra, 400001</textarea>
+                                <textarea id="address" class="form-control"
+                                    rows="3">123 Main Street, Mumbai, Maharashtra, 400001</textarea>
                             </div>
                         </form>
                     </div>
@@ -1027,7 +1036,7 @@
             header.addEventListener('click', () => {
                 const content = header.nextElementSibling;
                 content.classList.toggle('active');
-                
+
                 const icon = header.querySelector('.fa-chevron-down');
                 if (content.classList.contains('active')) {
                     icon.classList.remove('fa-chevron-down');
@@ -1038,10 +1047,11 @@
                 }
             });
         });
-        
+
         // Initialize first privacy section as open
         document.querySelector('.privacy-content').classList.add('active');
         document.querySelector('.privacy-header .fa-chevron-down').classList.replace('fa-chevron-down', 'fa-chevron-up');
     </script>
 </body>
+
 </html>

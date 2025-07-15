@@ -18,9 +18,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", userRouter);
-app.use("/services_cleaning", (req, res) => {
-  res.render("services_cleaning");
-});
 
 // start server
 const port = 5000;

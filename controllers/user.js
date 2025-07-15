@@ -2,10 +2,10 @@ const User = require("../models/user");
 const bcrypt = require("bcrypt");
 
 function handleGetHomePage(req, res) {
-  res.render("seva");
+  res.render("main/seva");
 }
 function handleGetHomePage(req, res) {
-  res.render("seva");
+  res.render("main/seva");
 }
 function handleGetSignInPage(req, res) {
   res.render("signin");
@@ -69,7 +69,7 @@ async function handleSignIn(req, res) {
     );
 
     if (isPasswordMatch) {
-      return res.render("home");
+      return res.render("main/afterLogin");
     } else {
       return res.status(401).send("Wrong Password Entered!");
     }
