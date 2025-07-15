@@ -4,7 +4,9 @@ const bcrypt = require("bcrypt");
 function handleGetHomePage(req, res) {
   res.render("seva");
 }
-
+function handleGetHomePage(req,res){
+  res.render("seva")
+}
 function handleGetSignInPage(req, res) {
   res.render("signin");
 }
