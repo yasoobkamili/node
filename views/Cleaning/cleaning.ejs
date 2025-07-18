@@ -200,6 +200,111 @@
       color: var(--white);
     }
 
+    .user-dropdown {
+      position: relative;
+      display: inline-block;
+      z-index: 1000;
+    }
+
+    .user-dropbtn {
+      background-color: #2563eb;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+    }
+
+    .user-dropbtn:hover,
+    .user-dropbtn:focus {
+      background-color: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+      outline: none;
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      min-width: 240px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      border-radius: 8px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-10px);
+      visibility: hidden;
+      transition: all 0.3s ease;
+      margin-top: 8px;
+    }
+
+    .user-dropdown:hover .dropdown-content,
+    .user-dropdown:focus-within .dropdown-content {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    .dropdown-content a {
+      color: #1e293b;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.25s ease;
+      font-weight: 500;
+      border-left: 3px solid transparent;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f5f9;
+      padding-left: 24px;
+      border-left: 3px solid #2563eb;
+    }
+
+    .dropdown-content a i {
+      width: 20px;
+      text-align: center;
+      color: #64748b;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-content a:hover i {
+      color: #2563eb;
+      transform: scale(1.1);
+    }
+
+
+    .divider {
+      height: 1px;
+      background-color: #e2e8f0;
+      margin: 6px 0;
+    }
+
+    .logout-link {
+      color: #ef4444 !important;
+    }
+
+    .logout-link:hover {
+      background-color: #fef2f2 !important;
+      border-left: 3px solid #ef4444 !important;
+    }
+
+    .logout-link i {
+      color: #ef4444 !important;
+    }
+
     .service-header {
       background: linear-gradient(135deg,
           var(--primary) 0%,
@@ -1285,13 +1390,38 @@
       </a>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="/signin">Home</a></li>
           <li><a href="#services" class="active">Services</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <div class="user-dropdown">
+        <button class="user-dropbtn" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user-circle"></i>
+          <i class="fas fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" role="menu">
+          <a href="/myprofile" role="menuitem">
+            <i class="fas fa-user"></i>
+            <span>My Profile</span>
+          </a>
+          <a href="/mybookings" role="menuitem">
+            <i class="fas fa-calendar-alt"></i>
+            <span>My Bookings</span>
+          </a>
+          <a href="/settings" role="menuitem">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </a>
+          <div class="divider"></div>
+          <a href="#" class="logout-link" role="menuitem">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 

@@ -15,7 +15,7 @@ function handleGetSignUpPage(req, res) {
 }
 
 async function handleSignUp(req, res) {
-  console.log(req.body);
+  console.log(req.body); // temporary check
 
   const data = {
     name: req.body.username,
