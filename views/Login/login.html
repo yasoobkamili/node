@@ -36,7 +36,27 @@
             display: flex;
             flex-direction: column;
         }
+        .close-auth {
+            position: absolute;
+            top: 50px;
+            right: 200px;
+            z-index: 1000;
+        }          
+
+        .close-btn {
+            font-size: 30px;
+            background: none;
+            border: none;
+            color: #333;
+            cursor: pointer;
+            transition: color 0.5s ease;
+        }
+
+        .close-btn:hover {
+            color: red;
+        }
         
+                
         .container {
             width: 100%;
             max-width: 1200px;
@@ -619,8 +639,7 @@
         @media (max-width: 768px) {
             .auth-content {
                 flex-direction: column;
-                min-height: auto;
-            }
+                min-height: auto;}
             
             .auth-banner {
                 padding: 40px 30px;
@@ -658,7 +677,6 @@
             .social-buttons {
                 gap: 15px;
             }
-            
             .social-btn {
                 width: 50px;
                 height: 50px;
@@ -691,6 +709,10 @@
     </header>
 
     <div class="auth-container">
+        <div class="close-auth">
+            <button class="close-btn" onclick="goHome()">×</button>
+        </div>
+
         <div class="container">
             <div class="auth-content">
                 <div class="auth-banner">
@@ -892,22 +914,14 @@
                 <div class="footer-col">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Bagh i mehtab, Srinagar, 190019</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <span>+91 6005272775</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>imaadtariq17@gmail.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Mon-Sat: 8:00 AM - 8:00 PM</span>
-                        </li>
+                        <li><i class="fas fa-map-marker-alt"></i>
+                            <span>Bagh i mehtab, Srinagar, 190019</span></li>
+                        <li><i class="fas fa-phone-alt"></i>
+                            <span>+91 6005272775</span></li>
+                        <li><i class="fas fa-envelope"></i>
+                            <span>imaadtariq17@gmail.com</span></li>
+                        <li><i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 8:00 AM - 8:00 PM</span></li>
                     </ul>
                 </div>
             </div>
@@ -917,7 +931,6 @@
             </div>
         </div>
     </footer>
-
     <script>
         const loginToggle = document.getElementById('login-toggle');
         const signupToggle = document.getElementById('signup-toggle');
@@ -938,7 +951,6 @@
                 toggleIndicator.style.left = `${signupToggle.offsetLeft}px`;
             }
         }
-        
         loginToggle.addEventListener('click', function() {
             loginForm.classList.add('active');
             signupForm.classList.remove('active');
@@ -991,7 +1003,6 @@
                 });
             }
         }
-        
         setupPasswordToggle('login-password', 'login-password-toggle');
         setupPasswordToggle('signup-password', 'signup-password-toggle');
         setupPasswordToggle('signup-confirm-password', 'confirm-password-toggle');
@@ -1001,7 +1012,6 @@
             this.reset();
             alert('Login successful! Redirecting to your dashboard...');
         });
-        
         document.getElementById('signup-form').addEventListener('submit', function(e) {
             e.preventDefault();
             this.reset();
@@ -1009,6 +1019,9 @@
         });
         
         window.addEventListener('resize', updateToggleIndicator);
-    </script>
+        function goHome() {
+            window.location.href= "../main/seva.html"; 
+            }
+        </script>
 </body>
 </html>

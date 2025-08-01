@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Gardening Services | SEVA</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>  
+      :root {
+        --primary: #2563eb;
+        --primary-light: #3b82f6;
+        --primary-dark: #1d4ed8;
+        --primary-transparent: rgba(37, 99, 235, 0.1);
+        --dark: #1e293b;
+        --darker: #0f172a;
+        --light: #f8fafc;
+        --light-gray: #e2e8f0;
+        --medium-gray: #94a3b8;
+        --white: #ffffff;
+        --black: #0a0a0a;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s ease;
+        --border-radius: 16px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--white);
+        color: var(--dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      header {
+        background: var(--white);
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+      }
+
+      header.scrolled {
+        padding: 0.5rem 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+      }
+
+      .logo:hover {
+        transform: translateY(-2px);
+      }
+
+      .logo-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: var(--primary);
+        color: var(--white);
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+      }
+
+      .logo-text {
+        color: var(--primary-dark);
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.8rem;
+      }
+
+      nav a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        padding: 8px 14px;
+        border-radius: 8px;
+        position: relative;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 2px;
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--primary);
+      }
+
+      nav a:hover::after,
+      nav a.active::after {
+        width: 70%;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--primary);
+        color: var(--white);
+        padding: 14px 32px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+      }
+
+      .btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3);
+      }
+
+      .btn:hover::before {
+        transform: translateX(100%);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary);
+      }
+
+      .btn-outline:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .service-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        color: var(--white);
+        padding: 120px 0 100px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        animation: gradientShift 12s ease infinite;
+        background-size: 200% 200%;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .service-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+        background-size: cover;
+        animation: waveAnimation 20s linear infinite;
+      }
+
+      @keyframes waveAnimation {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .service-header h1 {
+        font-size: 3.8rem;
+        margin-bottom: 1.2rem;
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 1s ease;
+      }
+
+      .service-header p {
+        font-size: 1.6rem;
+        max-width: 700px;
+        margin: 0 auto 2.5rem;
+        position: relative;
+        z-index: 1;
+        opacity: 0.92;
+        animation: fadeInUp 1s ease 0.2s forwards;
+        opacity: 0;
+      }
+
+      .header-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 1s ease 0.4s forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .service-content {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 3rem;
+        margin: 80px auto;
+      }
+
+      .service-details {
+        background: var(--white);
+        padding: 3rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(50px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease 0.2s forwards;
+      }
+
+      .service-details h2 {
+        color: var(--primary-dark);
+        margin-bottom: 1.8rem;
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--light-gray);
+        font-size: 2.2rem;
+      }
+
+      .service-details p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        color: var(--dark);
+        font-size: 1.1rem;
+      }
+
+      .service-features {
+        margin: 2.5rem 0;
+      }
+
+      .service-features h3 {
+        margin-bottom: 1.8rem;
+        color: var(--primary-dark);
+        font-size: 1.6rem;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.8rem;
+      }
+
+      .feature-card {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        padding: 1.8rem;
+        transition: var(--transition);
+        border: 1px solid var(--light-gray);
+        transform: translateY(30px);
+        opacity: 0;
+        animation: fadeInUp 0.6s ease forwards;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .feature-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .feature-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .feature-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .feature-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+        border-color: var(--primary-light);
+      }
+
+      .feature-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        background: var(--primary-transparent);
+        color: var(--primary);
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        transition: var(--transition);
+      }
+
+      .feature-card:hover .feature-icon {
+        transform: scale(1.1);
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .feature-card h4 {
+        margin-bottom: 1rem;
+        color: var(--darker);
+        font-size: 1.3rem;
+      }
+
+      .why-choose {
+        background: var(--light);
+        border-radius: var(--border-radius);
+        padding: 2.5rem;
+        margin: 2.5rem 0;
+        border: 1px solid var(--light-gray);
+        transform: translateY(30px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease 0.5s forwards;
+      }
+
+      .why-choose h3 {
+        color: var(--primary-dark);
+        margin-bottom: 1.8rem;
+        font-size: 1.6rem;
+      }
+
+      .benefits-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+      }
+
+      .benefit-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .benefit-item:nth-child(1) {
+        animation-delay: 0.6s;
+      }
+      .benefit-item:nth-child(2) {
+        animation-delay: 0.7s;
+      }
+      .benefit-item:nth-child(3) {
+        animation-delay: 0.8s;
+      }
+      .benefit-item:nth-child(4) {
+        animation-delay: 0.9s;
+      }
+
+      .benefit-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 36px;
+        height: 36px;
+        background: var(--primary-transparent);
+        color: var(--primary);
+        border-radius: 10px;
+        font-size: 1.2rem;
+        margin-top: 3px;
+        transition: var(--transition);
+      }
+
+      .benefit-item:hover .benefit-icon {
+        transform: rotate(10deg);
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .service-form {
+        background: var(--white);
+        padding: 2.8rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+        position: relative;
+        top: -40px;
+        z-index: 2;
+        border: 1px solid var(--light-gray);
+        transform: translateY(50px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease 0.4s forwards;
+      }
+
+      .service-form h3 {
+        text-align: center;
+        margin-bottom: 1.8rem;
+        color: var(--primary-dark);
+        font-size: 1.8rem;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .service-form h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--primary);
+        border-radius: 2px;
+      }
+
+      .form-group {
+        margin-bottom: 1.8rem;
+        position: relative;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.6rem;
+        font-weight: 500;
+        color: var(--darker);
+        font-size: 1.05rem;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 15px 18px;
+        border: 1px solid var(--light-gray);
+        border-radius: 10px;
+        font-size: 1rem;
+        background: var(--light);
+        transition: var(--transition);
+        font-family: "Poppins", sans-serif;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .form-group select:focus {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+
+      .form-group textarea {
+        height: 130px;
+        resize: vertical;
+      }
+
+      .price-badge {
+        background: var(--primary);
+        color: white;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.95rem;
+        margin-left: 10px;
+        font-weight: 600;
+        display: inline-block;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .testimonials-section {
+        background: var(--light);
+        padding: 100px 0;
+        border-top: 1px solid var(--light-gray);
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 4rem;
+        transform: translateY(30px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease 0.2s forwards;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary-dark);
+        margin-bottom: 1.2rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--primary);
+        border-radius: 2px;
+      }
+
+      .section-title p {
+        color: var(--medium-gray);
+        max-width: 650px;
+        margin: 1.5rem auto 0;
+        font-size: 1.1rem;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .testimonial-card {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        padding: 2.5rem;
+        box-shadow: var(--shadow-lg);
+        position: relative;
+        border: 1px solid var(--light-gray);
+        transform: translateY(50px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      .testimonial-card:nth-child(1) {
+        animation-delay: 0.3s;
+      }
+      .testimonial-card:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+      .testimonial-card:nth-child(3) {
+        animation-delay: 0.7s;
+      }
+
+      .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 5rem;
+        color: var(--primary-light);
+        opacity: 0.2;
+        font-family: Georgia, serif;
+        line-height: 1;
+      }
+
+      .testimonial-content {
+        margin-top: 1.5rem;
+        font-style: italic;
+        color: var(--dark);
+        line-height: 1.8;
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        margin-top: 1.8rem;
+      }
+
+      .author-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--light-gray);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-weight: bold;
+        font-size: 1.3rem;
+        margin-right: 18px;
+        flex-shrink: 0;
+      }
+
+      .author-info h4 {
+        color: var(--darker);
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+      }
+
+      .author-info p {
+        color: var(--medium-gray);
+        font-size: 0.95rem;
+      }
+
+      .rating {
+        color: #f59e0b;
+        margin-top: 8px;
+        font-size: 1.1rem;
+      }
+
+      .faq-section {
+        padding: 100px 0;
+        background: var(--white);
+      }
+
+      .faq-container {
+        max-width: 850px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        margin-bottom: 1.5rem;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        border: 1px solid var(--light-gray);
+        transform: translateY(30px);
+        opacity: 0;
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .faq-item:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .faq-item:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+      .faq-item:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      .faq-item:nth-child(4) {
+        animation-delay: 0.5s;
+      }
+      .faq-item:nth-child(5) {
+        animation-delay: 0.6s;
+      }
+
+      .faq-question {
+        padding: 1.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--white);
+        transition: var(--transition);
+        font-size: 1.1rem;
+      }
+
+      .faq-question:hover {
+        background: var(--primary-light);
+        color: var(--white);
+      }
+
+      .faq-question i {
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+      }
+
+      .faq-answer {
+        padding: 0 1.8rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.5s ease;
+      }
+
+      .faq-answer p {
+        padding: 1.8rem 0;
+        color: var(--dark);
+        line-height: 1.7;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+      }
+
+      .stats-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        color: var(--white);
+        padding: 100px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .stat-item {
+        padding: 1.8rem;
+        position: relative;
+        z-index: 1;
+        transform: translateY(30px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      .stat-item:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .stat-item:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      .stat-item:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      .stat-item:nth-child(4) {
+        animation-delay: 0.8s;
+      }
+
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 1.2rem;
+        opacity: 0.92;
+        font-weight: 500;
+      }
+
+      .fab {
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .fab:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5);
+        animation: none;
+      }
+
+      footer {
+        background: var(--darker);
+        color: var(--light);
+        padding: 100px 0 50px;
+        position: relative;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 4rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .footer-column h3 {
+        color: var(--white);
+        margin-bottom: 1.8rem;
+        position: relative;
+        padding-bottom: 12px;
+        font-size: 1.4rem;
+      }
+
+      .footer-column h3::after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 4px;
+        background: var(--primary);
+        bottom: 0;
+        left: 0;
+        border-radius: 2px;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 1rem;
+        transform: translateX(-10px);
+        opacity: 0;
+        animation: fadeInRight 0.5s ease forwards;
+      }
+
+      .footer-links li:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .footer-links li:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .footer-links li:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .footer-links li:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .footer-links li:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .footer-links li:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .footer-links a {
+        color: var(--light-gray);
+        text-decoration: none;
+        transition: var(--transition);
+        display: block;
+        padding: 8px 0;
+        position: relative;
+      }
+
+      .footer-links a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--primary-light);
+        padding-left: 10px;
+      }
+
+      .footer-links a:hover::before {
+        width: 30px;
+      }
+
+      .contact-info {
+        list-style: none;
+      }
+
+      .contact-info li {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 1.2rem;
+        align-items: flex-start;
+        transform: translateX(-10px);
+        opacity: 0;
+        animation: fadeInRight 0.5s ease forwards;
+      }
+
+      .contact-info li:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .contact-info li:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .contact-info li:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .contact-info li:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+
+      .contact-info i {
+        color: var(--primary-light);
+        margin-top: 6px;
+        font-size: 1.2rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 1.8rem;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: var(--transition);
+        font-size: 1.3rem;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: fadeInUp 0.5s ease forwards;
+      }
+
+      .social-links a:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .social-links a:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .social-links a:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .social-links a:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+
+      .social-links a:hover {
+        background: var(--primary);
+        transform: translateY(-5px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--light-gray);
+        font-size: 0.95rem;
+      }
+
+      .emergency-banner {
+        background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .emergency-banner i {
+        margin-right: 10px;
+        animation: pulse 1.5s infinite;
+      }
+
+      .emergency-banner a {
+        color: white;
+        text-decoration: underline;
+        margin-left: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .emergency-banner a:hover {
+        color: #feb2b2;
+      }
+
+      /* Location Styles */
+      .location-container {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+
+      .location-input {
+        flex-grow: 1;
+      }
+
+      .location-btn {
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 0 20px;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .location-btn:hover {
+        background: var(--primary-dark);
+      }
+
+      .map-container {
+        height: 200px;
+        background: var(--light-gray);
+        border-radius: var(--border-radius);
+        margin-top: 20px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #map {
+        width: 100%;
+        height: 100%;
+      }
+
+      .location-info {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        color: var(--medium-gray);
+        font-size: 0.9rem;
+      }
+
+      .location-info i {
+        margin-right: 10px;
+        color: var(--primary);
+      }
+
+      @media (max-width: 992px) {
+        .service-content {
+          grid-template-columns: 1fr;
+        }
+
+        .service-form {
+          top: 0;
+        }
+
+        .benefits-list {
+          grid-template-columns: 1fr;
+        }
+
+        .service-header h1 {
+          font-size: 3.2rem;
+        }
+
+        .section-title h2 {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          gap: 1.2rem;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .service-header {
+          padding: 90px 0 70px;
+        }
+
+        .service-header h1 {
+          font-size: 2.5rem;
+        }
+
+        .service-header p {
+          font-size: 1.3rem;
+        }
+
+        .header-buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .stat-number {
+          font-size: 3rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .service-header {
+          padding: 80px 0 60px;
+        }
+
+        .service-header h1 {
+          font-size: 2.2rem;
+        }
+
+        .service-header p {
+          font-size: 1.1rem;
+        }
+
+        .service-details,
+        .service-form {
+          padding: 2rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.8rem;
+        }
+
+        .stat-number {
+          font-size: 2.5rem;
+        }
+
+        .emergency-banner {
+          font-size: 1rem;
+          padding: 12px 0;
+        }
+
+        .location-container {
+          flex-direction: column;
+        }
+
+        .location-btn {
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="mainHeader">
+      <div class="container header-content">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <span class="logo-text">Seva</span>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="../main/seva.html">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="home">
+      <div class="service-header">
+        <div class="container">
+          <h1>Gardening Services</h1>
+          <p>
+            Reliable solutions for all your gardening needs – from landscape design to lawn maintenance.
+          </p>
+          <div class="header-buttons">
+            <a href="#booking-form" class="btn">Book a Gardener</a>
+            <a href="../main/seva.html#services" class="btn btn-outline">View All Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="service-content">
+          <div class="service-details">
+            <h2>Comprehensive Gardening Solutions</h2>
+            <p>
+                At SEVA, we provide professional gardening services for both
+                residential and commercial properties. Our skilled gardeners are
+                equipped to handle everything from custom landscape design to
+                full-scale lawn maintenance for homes, offices, and public spaces.
+                With years of experience, we guarantee quality workmanship and
+                safe, lasting green solutions.
+            </p>
+            <p>
+                We understand that gardening and landscaping work can be disruptive.That’s why we offer prompt, 
+                reliable service with transparent pricing.Our team arrives on time, evaluates your outdoor space 
+                thoroughly,and delivers efficient, eco-friendly solutions that enhance both beauty and functionality — without delay.
+            </p>
+            <div class="service-features">
+  <h3>Our Gardening Services</h3>
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-seedling"></i>
+      </div>
+      <h4>Landscape Design</h4>
+      <p>
+        Create your dream garden with our custom landscape design services, tailored to your preferences.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-tree"></i>
+      </div>
+      <h4>Tree & Shrub Planting</h4>
+      <p>
+        Expert planting and placement of trees and shrubs to enhance your garden's beauty and structure.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <h4>Lawn Maintenance</h4>
+      <p>
+        Regular mowing, trimming, and care to keep your lawn green, healthy, and beautifully manicured.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-water"></i>
+      </div>
+      <h4>Irrigation System Setup</h4>
+      <p>
+        Installation and maintenance of efficient irrigation systems for optimal plant health and water use.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+            
+          <div class="why-choose">
+  <h3>Why Choose SEVA Gardeners</h3>
+  <div class="benefits-list">
+
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <div>
+        <h4>Skilled & Trained Painters</h4>
+        <p>Our gardeners are experienced, background-checked, and professionally trained.</p>
+      </div>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <div>
+        <h4>On-Time Completion</h4>
+        <p>We respect your time and complete painting projects as scheduled — no delays.</p>
+      </div>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <div>
+        <h4>Flawless Finish Guarantee</h4>
+        <p>We ensure smooth finishes and crisp edges — backed by a satisfaction guarantee.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+            
+            <p>
+              With 24/7 emergency service and flexible scheduling, SEVA is your
+              trusted partner for all gardening needs. Book online today and
+              experience professional gardening services at their best!
+            </p>
+          </div>
+
+          <div id="booking-form" class="service-form">
+            <h3>Book a Gardener</h3>
+            <form id="bookingForm">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Your email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="Your phone number"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="address">Full Address</label>
+                <input
+                  type="text"
+                  id="address"
+                  placeholder="House no., Street, Area"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="location">Location Details</label>
+                <div class="location-container">
+                  <input
+                    type="text"
+                    id="location"
+                    class="location-input"
+                    placeholder="Enter your location or landmark"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="location-btn"
+                    id="detectLocation"
+                  >
+                    <i class="fas fa-location-dot"></i>
+                  </button>
+                </div>
+                <div class="location-info">
+                  <i class="fas fa-info-circle"></i>
+                  Click the location icon to detect your current position
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Map Preview</label>
+                <div class="map-container">
+                  <div id="map"></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="service">Service Type</label>
+                <select id="service" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option>Landscape Design – ₹2,999</option>
+                    <option>Lawn Maintenance – ₹1,499</option>
+                    <option>Tree & Shrub Planting – ₹1,999</option>
+                    <option>Garden Cleanup & Weeding – ₹999</option>
+                    <option>Irrigation System Installation – ₹3,499</option>
+
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Problem Description</label>
+                <textarea
+                  id="message"
+                  placeholder="Drop us a message with your requirements"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn" style="width: 100%">
+                Book Now
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number" id="stat1">0</span>
+            <span class="stat-label">Gardening Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="stat2">0</span>
+            <span class="stat-label">Satisfaction Rate</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="stat3">0</span>
+            <span class="stat-label">Certified Gardeners</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Emergency Service</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>What Our Customers Say</h2>
+          <p>Rated 4.7/5 based on 850+ reviews</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "SEVA's gardener arrived promptly after my booking and transformed my entire garden with
+              a flawless design. Professional, detail-oriented, and reasonably priced. Completely refreshed
+              the space — couldn’t be happier!
+"
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">SN</div>
+              <div class="author-info">
+                <h4>Suhail Nazir</h4>
+                <p>Residential Customer</p>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "Our office needed a complete makeover, and SEVA's gardening team delivered outstanding results. 
+              They worked around our business hours, maintained a clean workspace, and gave our outdoor space a vibrant, 
+              professional finish. Their commercial gardening expertise is truly commendable.
+"           </div>
+
+            <div class="testimonial-author">
+              <div class="author-avatar">AS</div>
+              <div class="author-info">
+                <h4>Asim Shabir</h4>
+                <p>Business Owner</p>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+                "SEVA's gardening team transformed my backyard into a beautiful oasis. Their attention to detail 
+                and creativity exceeded my expectations."
+</div>
+
+            <div class="testimonial-author">
+              <div class="author-avatar">Ab</div>
+              <div class="author-info">
+                <h4>Abdullah</h4>
+                <p>Regular Customer</p>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Gardening FAQs</h2>
+          <p>Answers to common gardening questions</p>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              What areas do you service for gardening work?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We service all neighborhoods in Srinagar and surrounding areas.
+                Contact us to confirm availability in your specific location.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Are your gardeners licensed and insured?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, all our gardeners are fully licensed and insured. We carry
+                comprehensive liability insurance for your protection.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Do you offer emergency painting services?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, we offer 24/7 emergency gardening services. As per your need, call our hotline
+                anytime for immediate assistance with gardening issues, plant consultations,
+                or other urgent problems.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              What is your pricing structure?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We provide upfront pricing before any work begins. Our pricing
+                includes a service call fee plus time and materials. Emergency
+                services have a higher rate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <section id="about">
+            <div class ="footer-column">
+              <h3>About SEVA</h3>
+              <p>
+                SEVA is a service platform connecting customers with trusted
+                professionals for all daily household needs. Our mission is to
+                make quality services accessible to everyone.
+              </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          </section>
+
+          <div class="footer-column">
+            <h3>Our Services</h3>
+            <ul class="footer-links">
+              <li><a href="#services">Plumbing</a></li>
+              <li><a href="#services">Cleaning</a></li>
+              <li><a href="#services">Laundry</a></li>
+              <li><a href="#services">Electrical</a></li>
+              <li><a href="#services">Painting</a></li>
+              <li><a href="#services">Gardening</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#about">Our Team</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#contact">Careers</a></li>
+              <li><a href="#contact">Blog</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>H.no 82 gousia colony, Bagh i mehtab</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <span>+91 6005272774</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>imaadtariq17@gmail.com
+                </span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>soriyabasharat@gmail.com</span>
+              </li>
+              <li>
+                <i class="fas fa-clock"></i>
+                <span
+                  >Mon-Fri: 8:00 AM - 8:00 PM<br />Sat-Sun: 9:00 AM - 6:00
+                  PM</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 SEVA Services. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
+
+    <script>
+      let map;
+      let marker;
+      let autocomplete;
+
+      function initMap() {
+        const defaultLocation = { lat: 34.0837, lng: 74.7973 };
+
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: defaultLocation,
+          zoom: 12,
+          mapTypeControl: false,
+          streetViewControl: false,
+          fullscreenControl: true,
+          zoomControl: true,
+          zoomControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_CENTER,
+          },
+        });
+
+        marker = new google.maps.Marker({
+          position: defaultLocation,
+          map: map,
+          title: "Srinagar",
+          draggable: true,
+        });
+
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById("location"),
+          { types: ["geocode"] }
+        );
+
+        autocomplete.addListener("place_changed", () => {
+          const place = autocomplete.getPlace();
+          if (!place.geometry) {
+            return;
+          }
+
+          map.setCenter(place.geometry.location);
+          map.setZoom(16);
+
+          marker.setPosition(place.geometry.location);
+
+          document.getElementById("address").value =
+            place.formatted_address || "";
+        });
+
+        map.addListener("click", (event) => {
+          marker.setPosition(event.latLng);
+          reverseGeocode(event.latLng);
+        });
+
+        marker.addListener("dragend", (event) => {
+          reverseGeocode(event.latLng);
+        });
+      }
+
+      function reverseGeocode(latLng) {
+        const geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ location: latLng }, (results, status) => {
+          if (status === "OK") {
+            if (results[0]) {
+              document.getElementById("location").value =
+                results[0].formatted_address;
+              document.getElementById("address").value =
+                results[0].formatted_address;
+            }
+          }
+        });
+      }
+
+      function detectLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+              };
+
+              map.setCenter(pos);
+              map.setZoom(16);
+
+              marker.setPosition(pos);
+
+              reverseGeocode(pos);
+            },
+            () => {
+              alert("Unable to get your location. Please enter manually.");
+            }
+          );
+        } else {
+          alert(
+            "Geolocation is not supported by your browser. Please enter manually."
+          );
+        }
+      }
+
+      const header = document.getElementById("mainHeader");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const faqItem = question.parentElement;
+          faqItem.classList.toggle("active");
+        });
+      });
+
+      const bookingForm = document.getElementById("bookingForm");
+      if (bookingForm) {
+        bookingForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const service = document.getElementById("service").value;
+          const date = document.getElementById("date").value;
+          const address = document.getElementById("address").value;
+          const location = document.getElementById("location").value;
+
+          if (
+            !name ||
+            !email ||
+            !phone ||
+            !service ||
+            !date ||
+            !address ||
+            !location
+          ) {
+            alert("Please fill in all required fields");
+            return;
+          }
+
+          const submitBtn = bookingForm.querySelector('button[type="submit"]');
+          submitBtn.innerHTML =
+            '<i class="fas fa-check"></i> Booking Confirmed!';
+          submitBtn.style.backgroundColor = "#10b981";
+
+          setTimeout(() => {
+            submitBtn.innerHTML = "Book Plumber";
+            submitBtn.style.backgroundColor = "";
+            bookingForm.reset();
+          }, 2000);
+        });
+      }
+
+      const stat1 = document.getElementById("stat1");
+      const stat2 = document.getElementById("stat2");
+      const stat3 = document.getElementById("stat3");
+
+      const animateValue = (element, start, end, duration) => {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          const value = Math.floor(progress * (end - start) + start);
+          element.textContent = value + (element === stat2 ? "%" : "+");
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      };
+
+      const statsSection = document.querySelector(".stats-section");
+      let statsAnimated = false;
+
+      const animateStats = () => {
+        const rect = statsSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100 && !statsAnimated) {
+          statsAnimated = true;
+          animateValue(stat1, 0, 850, 2000);
+          animateValue(stat2, 0, 99, 2000);
+          animateValue(stat3, 0, 35, 2000);
+        }
+      };
+
+      window.addEventListener("scroll", animateStats);
+      animateStats();
+
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll("nav a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (pageYOffset >= sectionTop - sectionHeight / 3) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").substring(1) === current) {
+            //link.classList.add("active");
+          }
+        });
+      });
+
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(
+          ".service-details, .service-form, .section-title, .feature-card, .testimonial-card, .faq-item, .stat-item, .why-choose, .benefit-item"
+        )
+        .forEach((el) => {
+          observer.observe(el);
+        });
+
+      const detectLocationBtn = document.getElementById("detectLocation");
+      detectLocationBtn.addEventListener("click", detectLocation);
+    </script>
+  </body>
+</html>
