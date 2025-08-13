@@ -1,34 +1,18 @@
 const mongoose = require("mongoose");
 
 const bookingSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "users",
-    required: true,
-  },
-  serviceType: {
-    type: String,
-    enum: ["cleaning", "plumbing", "laundry"],
-    required: true,
-  },
-  date: {
-    type: Date,
-    required: true,
-  },
-  status: {
-    type: String,
-    enum: ["pending", "confirmed", "completed", "cancelled"],
-    default: "pending",
-  },
-  details: {
-    type: String,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  phone: { type: String, required: true },
+  address: { type: String, required: true },
+  propertyType: { type: String, required: true },
+  location: { type: String, required: true }, // raw text location/landmark
+  service: { type: String, required: true },
+  date: { type: Date, required: true },
+  frequency: { type: String, required: true },
+  message: { type: String },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, // optional if login is required
+  createdAt: { type: Date, default: Date.now },
 });
 
-const Booking = mongoose.model("Booking", bookingSchema);
-
-module.exports = Booking;
+module.exports = mongoose.model("Booking", bookingSchema);

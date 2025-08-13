@@ -744,15 +744,7 @@
                         <% if (bookings && bookings.length> 0) { %>
                             <% bookings.forEach(function(booking) { %>
                                 <div class="booking-card">
-                                    <div class="booking-header">
-                                        <div class="booking-title">
-                                            <%= booking.serviceType.charAt(0).toUpperCase() +
-                                                booking.serviceType.slice(1) %> Service
-                                        </div>
-                                        <div class="booking-status status-<%= booking.status %>">
-                                            <%= booking.status.charAt(0).toUpperCase() + booking.status.slice(1) %>
-                                        </div>
-                                    </div>
+
                                     <div class="booking-details">
                                         <div class="detail-item">
                                             <span class="detail-label">Booking ID</span>

@@ -1548,28 +1548,28 @@
 
         <div id="booking-form" class="service-form">
           <h3>Book Cleaning Service</h3>
-          <form id="bookingForm">
+          <form id="bookingForm" action="/booking" method="post">
             <div class="form-group">
               <label for="name">Full Name</label>
-              <input type="text" id="name" placeholder="Your name" required />
+              <input type="text" id="name" name="name" placeholder="Your name" required />
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" placeholder="Your email" required />
+              <input type="email" id="email" name="email" placeholder="Your email" required />
             </div>
             <div class="form-group">
               <label for="phone">Phone</label>
-              <input type="tel" id="phone" placeholder="Your phone number" required />
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number" required />
             </div>
 
             <div class="form-group">
               <label for="address">Full Address</label>
-              <input type="text" id="address" placeholder="House no., Street, Area" required />
+              <input type="text" id="address" name="address" placeholder="House no., Street, Area" required />
             </div>
 
             <div class="form-group">
               <label for="property-type">Property Type</label>
-              <select id="property-type" required>
+              <select id="property-type" name="propertyType" required>
                 <option value="" disabled selected>Select property type</option>
                 <option>Apartment (1-2 BHK)</option>
                 <option>House (3+ BHK)</option>
@@ -1584,8 +1584,8 @@
             <div class="form-group">
               <label for="location">Location Details</label>
               <div class="location-container">
-                <input type="text" id="location" class="location-input" placeholder="Enter your location or landmark"
-                  required />
+                <input type="text" id="location" name="location" class="location-input"
+                  placeholder="Enter your location or landmark" required />
                 <button type="button" class="location-btn" id="detectLocation">
                   <i class="fas fa-location-dot"></i>
                 </button>
@@ -1611,7 +1611,7 @@
 
             <div class="form-group">
               <label for="service">Service Type</label>
-              <select id="service" required>
+              <select id="service" name="service" required>
                 <option value="" disabled selected>Select a service</option>
                 <option>
                   Regular Cleaning <span class="price-badge">₹1,299</span>
@@ -1635,11 +1635,11 @@
             </div>
             <div class="form-group">
               <label for="date">Preferred Date</label>
-              <input type="date" id="date" required />
+              <input type="date" id="date" name="date" required />
             </div>
             <div class="form-group">
               <label for="frequency">Cleaning Frequency</label>
-              <select id="frequency" required>
+              <select id="frequency" name="frequency" required>
                 <option value="" disabled selected>Select frequency</option>
                 <option>One-time Service</option>
                 <option>Weekly</option>
@@ -1649,10 +1649,11 @@
             </div>
             <div class="form-group">
               <label for="message">Special Instructions</label>
-              <textarea id="message" placeholder="Any specific areas of focus or special requirements"></textarea>
+              <textarea id="message" name="message"
+                placeholder="Any specific areas of focus or special requirements"></textarea>
             </div>
             <button type="submit" class="btn" style="width: 100%">
-              Book Cleaning Service
+              Book Now
             </button>
           </form>
         </div>
@@ -2012,114 +2013,114 @@
       });
     });
 
-    const bookingForm = document.getElementById("bookingForm");
-    if (bookingForm) {
-      bookingForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+    // const bookingForm = document.getElementById("bookingForm");
+    // if (bookingForm) {
+    //   bookingForm.addEventListener("submit", (e) => {
+    //     e.preventDefault();
 
-        const submitBtn = bookingForm.querySelector('button[type="submit"]');
-        submitBtn.innerHTML =
-          '<i class="fas fa-check"></i> Booking Confirmed!';
-        submitBtn.style.backgroundColor = "#10b981";
+    //     const submitBtn = bookingForm.querySelector('button[type="submit"]');
+    //     submitBtn.innerHTML =
+    //       '<i class="fas fa-check"></i> Booking Confirmed!';
+    //     submitBtn.style.backgroundColor = "#10b981";
 
-        setTimeout(() => {
-          submitBtn.innerHTML = "Book Cleaning Service";
-          submitBtn.style.backgroundColor = "";
-          bookingForm.reset();
-          document.getElementById("mapOverlay").classList.remove("hidden");
-          marker.setPosition(defaultLocation);
-          map.panTo(defaultLocation);
-          map.setZoom(12);
-        }, 2000);
-      });
-    }
+    //     setTimeout(() => {
+    //       submitBtn.innerHTML = "Book Cleaning Service";
+    //       submitBtn.style.backgroundColor = "";
+    //       bookingForm.reset();
+    //       document.getElementById("mapOverlay").classList.remove("hidden");
+    //       marker.setPosition(defaultLocation);
+    //       map.panTo(defaultLocation);
+    //       map.setZoom(12);
+    //     }, 2000);
+    //   });
+    // }
 
-    const stat1 = document.getElementById("stat1");
-    const stat2 = document.getElementById("stat2");
-    const stat3 = document.getElementById("stat3");
+    // const stat1 = document.getElementById("stat1");
+    // const stat2 = document.getElementById("stat2");
+    // const stat3 = document.getElementById("stat3");
 
-    const animateValue = (element, start, end, duration) => {
-      let startTimestamp = null;
-      const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        const value = Math.floor(progress * (end - start) + start);
-        element.textContent = value + (element === stat2 ? "%" : "+");
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        }
-      };
-      window.requestAnimationFrame(step);
-    };
+    // const animateValue = (element, start, end, duration) => {
+    //   let startTimestamp = null;
+    //   const step = (timestamp) => {
+    //     if (!startTimestamp) startTimestamp = timestamp;
+    //     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    //     const value = Math.floor(progress * (end - start) + start);
+    //     element.textContent = value + (element === stat2 ? "%" : "+");
+    //     if (progress < 1) {
+    //       window.requestAnimationFrame(step);
+    //     }
+    //   };
+    //   window.requestAnimationFrame(step);
+    // };
 
-    const statsSection = document.querySelector(".stats-section");
-    let statsAnimated = false;
+    // const statsSection = document.querySelector(".stats-section");
+    // let statsAnimated = false;
 
-    const animateStats = () => {
-      const rect = statsSection.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100 && !statsAnimated) {
-        statsAnimated = true;
-        animateValue(stat1, 0, 1200, 2000);
-        animateValue(stat2, 0, 98, 2000);
-        animateValue(stat3, 0, 45, 2000);
-      }
-    };
+    // const animateStats = () => {
+    //   const rect = statsSection.getBoundingClientRect();
+    //   if (rect.top < window.innerHeight - 100 && !statsAnimated) {
+    //     statsAnimated = true;
+    //     animateValue(stat1, 0, 1200, 2000);
+    //     animateValue(stat2, 0, 98, 2000);
+    //     animateValue(stat3, 0, 45, 2000);
+    //   }
+    // };
 
-    window.addEventListener("scroll", animateStats);
-    animateStats();
+    // window.addEventListener("scroll", animateStats);
+    // animateStats();
 
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav a");
+    // const sections = document.querySelectorAll("section");
+    // const navLinks = document.querySelectorAll("nav a");
 
-    window.addEventListener("scroll", () => {
-      let current = "";
+    // window.addEventListener("scroll", () => {
+    //   let current = "";
 
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+    //   sections.forEach((section) => {
+    //     const sectionTop = section.offsetTop;
+    //     const sectionHeight = section.clientHeight;
 
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
-          current = section.getAttribute("id");
-        }
-      });
+    //     if (pageYOffset >= sectionTop - sectionHeight / 3) {
+    //       current = section.getAttribute("id");
+    //     }
+    //   });
 
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").substring(1) === current) {
-          link.classList.add("active");
-        }
-      });
-    });
+    //   navLinks.forEach((link) => {
+    //     link.classList.remove("active");
+    //     if (link.getAttribute("href").substring(1) === current) {
+    //       link.classList.add("active");
+    //     }
+    //   });
+    // });
 
-    const observerOptions = {
-      threshold: 0.1,
-    };
+    // const observerOptions = {
+    //   threshold: 0.1,
+    // };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = "translateY(0)";
-        }
-      });
-    }, observerOptions);
+    // const observer = new IntersectionObserver((entries) => {
+    //   entries.forEach((entry) => {
+    //     if (entry.isIntersecting) {
+    //       entry.target.style.opacity = 1;
+    //       entry.target.style.transform = "translateY(0)";
+    //     }
+    //   });
+    // }, observerOptions);
 
-    document
-      .querySelectorAll(
-        ".service-details, .service-form, .section-title, .feature-card, .testimonial-card, .faq-item, .stat-item, .why-choose, .benefit-item"
-      )
-      .forEach((el) => {
-        observer.observe(el);
-      });
+    // document
+    //   .querySelectorAll(
+    //     ".service-details, .service-form, .section-title, .feature-card, .testimonial-card, .faq-item, .stat-item, .why-choose, .benefit-item"
+    //   )
+    //   .forEach((el) => {
+    //     observer.observe(el);
+    //   });
 
-    const detectLocationBtn = document.getElementById("detectLocation");
-    detectLocationBtn.addEventListener("click", detectLocation);
+    // const detectLocationBtn = document.getElementById("detectLocation");
+    // detectLocationBtn.addEventListener("click", detectLocation);
 
-    const today = new Date();
-    const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const minDate = tomorrow.toISOString().split('T')[0];
-    document.getElementById("date").min = minDate;
+    // const today = new Date();
+    // const tomorrow = new Date(today);
+    // tomorrow.setDate(tomorrow.getDate() + 1);
+    // const minDate = tomorrow.toISOString().split('T')[0];
+    // document.getElementById("date").min = minDate;
   </script>
 
   <script

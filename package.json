@@ -8,7 +8,7 @@
   "keywords": [
     "none"
   ],
-  "author": "Team Seva",
+  "author": "Badmash Company",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^6.0.0",

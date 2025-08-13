@@ -1,30 +1,57 @@
 const Booking = require("../models/booking");
 const User = require("../models/user");
+// controllers/bookingController.js
 
-// Create a new booking
 async function createBooking(req, res) {
+  console.log("createBooking entered");
   try {
-    const { serviceType, date, details } = req.body;
+    // Destructure all values from the form
+    const {
+      name,
+      email,
+      phone,
+      address,
+      propertyType,
+      location,
+      service,
+      date,
+      frequency,
+      message,
+    } = req.body;
+
     const userId = req.user ? req.user._id : null;
     if (!userId) {
-      // If not logged in, redirect to login
       return res.redirect("/signin");
     }
+
+    // Save booking
     const booking = await Booking.create({
-      user: userId,
-      serviceType,
+      name,
+      email,
+      phone,
+      address,
+      propertyType,
+      location,
+      service,
       date,
-      details,
+      frequency,
+      message,
+      user: userId,
     });
-    // If form submission, redirect to mybookings
+
+    console.log("Booking saved:", booking);
+
+    // Decide redirect or JSON response
     if (
       req.headers.accept &&
       req.headers.accept.indexOf("application/json") === -1
     ) {
       return res.redirect("/mybookings");
     }
+
     res.status(201).json(booking);
   } catch (err) {
+    console.error("Booking creation error:", err.message);
     if (
       req.headers.accept &&
       req.headers.accept.indexOf("application/json") === -1
@@ -34,6 +61,7 @@ async function createBooking(req, res) {
     res.status(400).json({ error: err.message });
   }
 }
+
 
 // Get all bookings for a user
 async function getUserBookings(req, res) {

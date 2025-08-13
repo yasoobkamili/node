@@ -42,11 +42,12 @@ app.use(async (req, res, next) => {
 });
 
 app.use("/", userRouter);
-app.use("/bookings", bookingRouter);
+app.use("/booking", bookingRouter);
+
 app.use("/profile", profileRouter);
 
 // start server
 const port = 5000;
 app.listen(port, () => {
-  console.log(`Server running on port: ${port}`);
+  console.log(`Server running on : http://localhost:${port}`);
 });
