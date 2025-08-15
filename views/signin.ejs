@@ -39,6 +39,24 @@
             display: flex;
             flex-direction: column;
         }
+        .close-auth {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            z-index:1000;
+        }          
+
+        .close-btn {
+            font-size: 30px;
+            background: none;
+            border: none;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: red;
+        }
 
         .container {
             width: 100%;
@@ -159,7 +177,6 @@
             display: flex;
             align-items: center;
             padding: 40px 0;
-            animation: floating 5s ease-in-out infinite;
         }
 
         .auth-content {
@@ -254,6 +271,7 @@
         }
 
         .auth-forms {
+            position:relative;
             flex: 1;
             padding: 50px;
             display: flex;
@@ -616,24 +634,6 @@
             font-size: 15px;
         }
 
-        .floating {
-            animation: floating 8s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
         @media (max-width: 992px) {
             .auth-banner {
                 padding: 40px;
@@ -703,7 +703,7 @@
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <i class="fas fa-hands-helping floating"></i>
+                <i class="fas fa-hands-helping"></i>
                 <span>SEVA</span>
             </a>
 
@@ -758,6 +758,9 @@
                 </div>
 
                 <div class="auth-forms">
+                    <div class="close-auth">
+                        <button class="close-btn" onclick="goHome()">×</button>
+                    </div>
                     <div class="form-toggle">
                         <button class="toggle-btn active" id="login-toggle">Login</button>
                         <button class="toggle-btn" id="signup-toggle">Sign Up</button>
@@ -1053,6 +1056,9 @@
         // });
 
         window.addEventListener('resize', updateToggleIndicator);
+        function goHome() {
+            window.location.href= "../main/seva.html"; 
+            }
     </script>
 </body>
 
