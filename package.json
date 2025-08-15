@@ -8,12 +8,14 @@
   "keywords": [
     "none"
   ],
-  "author": "Team Seva",
+  "author": "Badmash Company",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
+    "express-session": "^1.18.2",
+    "method-override": "^3.0.0",
     "mongoose": "^8.16.0",
     "nodemon": "^3.1.10"
   }

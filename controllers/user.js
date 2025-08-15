@@ -1,5 +1,6 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
+const Booking = require("../models/booking");
 
 function handleGetHomePage(req, res) {
   res.render("main/seva");
@@ -12,6 +13,11 @@ function handleGetSignInPage(req, res) {
 }
 function handleGetSignUpPage(req, res) {
   res.render("signup");
+}
+function handleLogout(req, res) {
+  req.session.destroy(() => {
+    res.redirect("/signin");
+  });
 }
 
 async function handleSignUp(req, res) {
@@ -69,6 +75,7 @@ async function handleSignIn(req, res) {
     );
 
     if (isPasswordMatch) {
+      req.session.userId = email._id; // Set session userId
       return res.render("main/afterLogin");
     } else {
       return res.status(401).send("Wrong Password Entered!");
@@ -79,10 +86,36 @@ async function handleSignIn(req, res) {
   }
 }
 
+// Render My Bookings page with user's bookings
+async function renderMyBookingsPage(req, res) {
+  try {
+    const userId = req.user._id;
+    const bookings = await Booking.find({ user: userId }).sort({ date: -1 });
+    res.render("main/mybookings", { bookings });
+  } catch (err) {
+    res.status(500).send("Failed to load bookings");
+  }
+}
+
+// Render My Profile page with user info and stats
+async function renderMyProfilePage(req, res) {
+  try {
+    const userId = req.user._id;
+    const user = await User.findById(userId).select("-password");
+    const bookings = await Booking.find({ user: userId });
+    res.render("main/myprofile", { user, bookings });
+  } catch (err) {
+    res.status(500).send("Failed to load profile");
+  }
+}
+
 module.exports = {
   handleGetHomePage,
   handleGetSignInPage,
   handleGetSignUpPage,
   handleSignUp,
   handleSignIn,
+  renderMyBookingsPage,
+  renderMyProfilePage,
+  handleLogout,
 };

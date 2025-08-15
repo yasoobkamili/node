@@ -741,196 +741,47 @@
                     </div>
 
                     <div class="bookings-list">
-                        <div class="booking-card">
-                            <div class="booking-header">
-                                <div class="booking-title">Home Cleaning</div>
-                                <div class="booking-status status-upcoming">Upcoming</div>
-                            </div>
-                            <div class="booking-details">
-                                <div class="detail-item">
-                                    <span class="detail-label">Booking ID</span>
-                                    <span class="detail-value">SEVA-2023-00145</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-label">Date & Time</span>
-                                    <span class="detail-value">Tomorrow • 10:00 AM</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-label">Duration</span>
-                                    <span class="detail-value">3 hours</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-label">Amount</span>
-                                    <span class="detail-value">₹1,499</span>
-                                </div>
-                            </div>
+                        <% if (bookings && bookings.length> 0) { %>
+                            <% bookings.forEach(function(booking) { %>
+                                <div class="booking-card">
 
-                            <div class="professional-info">
-                                <div class="professional-avatar">
-                                    <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=500"
-                                        alt="Professional">
+                                    <div class="booking-details">
+                                        <div class="detail-item">
+                                            <span class="detail-label">Booking ID</span>
+                                            <span class="detail-value">
+                                                <%= booking._id %>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Date & Time</span>
+                                            <span class="detail-value">
+                                                <%= booking.date.toLocaleString() %>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Status</span>
+                                            <span class="detail-value">
+                                                <%= booking.status %>
+                                            </span>
+                                        </div>
+                                        <% if (booking.details) { %>
+                                            <div class="detail-item">
+                                                <span class="detail-label">Details</span>
+                                                <span class="detail-value">
+                                                    <%= booking.details %>
+                                                </span>
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                    <form action="/bookings/<%= booking._id %>?_method=DELETE" method="POST"
+                                        style="margin-top:10px;">
+                                        <button type="submit" class="btn btn-outline">Cancel Booking</button>
+                                    </form>
                                 </div>
-                                <div class="professional-details">
-                                    <h4>Rajesh Kumar</h4>
-                                    <p>
-                                        <span class="professional-rating">
-                                            <i class="fas fa-star"></i> 4.8
-                                        </span>
-                                        • 120 services
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="booking-actions">
-                                <button class="btn btn-outline">View Details</button>
-                                <button class="btn btn-primary">Reschedule</button>
-                                <button class="btn btn-outline">Cancel</button>
-                                <button class="btn btn-outline">Message</button>
-                            </div>
-                        </div>
-
-                        <div class="booking-card">
-                            <div class="booking-header">
-                                <div class="booking-title">Plumbing Service</div>
-                                <div class="booking-status status-inprogress">In Progress</div>
-                            </div>
-                            <div class="booking-details">
-                                <div class="detail-item">
-                                    <span class="detail-label">Booking ID</span>
-                                    <span class="detail-value">SEVA-2023-00142</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-label">Date & Time</span>
-                                    <span class="detail-value">Today • 2:30 PM</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-label">Duration</span>
-                                    <span class="detail-value">2 hours</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-label">Amount</span>
-                                    <span class="detail-value">₹2,299</span>
-                                </div>
-                            </div>
-
-                            <div class="professional-info">
-                                <div class="professional-avatar">
-                                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=500"
-                                        alt="Professional">
-                                </div>
-                                <div class="professional-details">
-                                    <h4>Vikram Singh</h4>
-                                    <p>
-                                        <span class="professional-rating">
-                                            <i class="fas fa-star"></i> 4.9
-                                        </span>
-                                        • 85 services
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="booking-actions">
-                                <button class="btn btn-outline">View Details</button>
-                                <button class="btn btn-outline">Track Professional</button>
-                                <button class="btn btn-outline">Message</button>
-                            </div>
-                        </div>
-
-                        <div class="booking-card">
-                            <div class="booking-header">
-                                <div class="booking-title">Home Cleaning</div>
-                                <div class="booking-status status-completed">Completed</div>
-                            </div>
-                            <div class="booking-details">
-                                <div class="detail-item">
-                                    <span class="detail-label">Booking ID</span>
-                                    <span class="detail-value">SEVA-2023-00125</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-label">Date & Time</span>
-                                    <span class="detail-value">15 Nov, 2023 • 10:00 AM</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-label">Duration</span>
-                                    <span class="detail-value">3 hours</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-label">Amount</span>
-                                    <span class="detail-value">₹1,499</span>
-                                </div>
-                            </div>
-
-                            <div class="professional-info">
-                                <div class="professional-avatar">
-                                    <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=500"
-                                        alt="Professional">
-                                </div>
-                                <div class="professional-details">
-                                    <h4>Rajesh Kumar</h4>
-                                    <p>
-                                        <span class="professional-rating">
-                                            <i class="fas fa-star"></i> 4.8
-                                        </span>
-                                        • 120 services
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="booking-actions">
-                                <button class="btn btn-outline">View Details</button>
-                                <button class="btn btn-primary">Book Again</button>
-                                <button class="btn btn-outline">Rate Service</button>
-                                <button class="btn btn-outline">Download Invoice</button>
-                            </div>
-                        </div>
-
-                        <div class="booking-card">
-                            <div class="booking-header">
-                                <div class="booking-title">Electrical Repair</div>
-                                <div class="booking-status status-completed">Completed</div>
-                            </div>
-                            <div class="booking-details">
-                                <div class="detail-item">
-                                    <span class="detail-label">Booking ID</span>
-                                    <span class="detail-value">SEVA-2023-00132</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-label">Date & Time</span>
-                                    <span class="detail-value">10 Nov, 2023 • 11:00 AM</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-label">Duration</span>
-                                    <span class="detail-value">1.5 hours</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-label">Amount</span>
-                                    <span class="detail-value">₹1,799</span>
-                                </div>
-                            </div>
-
-                            <div class="professional-info">
-                                <div class="professional-avatar">
-                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=500"
-                                        alt="Professional">
-                                </div>
-                                <div class="professional-details">
-                                    <h4>Priya Sharma</h4>
-                                    <p>
-                                        <span class="professional-rating">
-                                            <i class="fas fa-star"></i> 4.7
-                                        </span>
-                                        • 92 services
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="booking-actions">
-                                <button class="btn btn-outline">View Details</button>
-                                <button class="btn btn-primary">Book Again</button>
-                                <button class="btn btn-outline">Rate Service</button>
-                                <button class="btn btn-outline">Download Invoice</button>
-                            </div>
-                        </div>
+                                <% }); %>
+                                    <% } else { %>
+                                        <p>No bookings found.</p>
+                                        <% } %>
                     </div>
 
                     <div class="pagination">
