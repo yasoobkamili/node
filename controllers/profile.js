@@ -2,6 +2,7 @@ const User = require("../models/user");
 
 // Get user profile
 async function getProfile(req, res) {
+  console.log("getProfile entered");
   try {
     const userId = req.user._id;
     const user = await User.findById(userId).select("-password");
@@ -14,6 +15,7 @@ async function getProfile(req, res) {
 
 // Update user profile
 async function updateProfile(req, res) {
+  console.log("updateProfile entered");
   try {
     const userId = req.user._id;
     const update = req.body;
