@@ -62,7 +62,6 @@ async function createBooking(req, res) {
   }
 }
 
-
 // Get all bookings for a user
 async function getUserBookings(req, res) {
   try {

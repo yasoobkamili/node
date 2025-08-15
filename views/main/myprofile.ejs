@@ -635,8 +635,7 @@
                 <div class="profile-sidebar">
                     <div class="user-info">
                         <div class="user-avatar">
-                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=500"
-                                alt="User Avatar">
+                            <img src="images/profile.jpg" alt="User Avatar">
                             <div class="edit-avatar">
                                 <i class="fas fa-camera"></i>
                             </div>
@@ -732,8 +731,8 @@
                             <div class="booking-card">
                                 <div class="booking-header">
                                     <div class="booking-title">
-                                        <%= booking.serviceType.charAt(0).toUpperCase() + booking.serviceType.slice(1)
-                                            %> Service
+                                        <%= booking.service.charAt(0).toUpperCase() + booking.service.slice(1) %>
+                                            Service
                                     </div>
                                     <div class="booking-status status-<%= booking.status %>">
                                         <%= booking.status.charAt(0).toUpperCase() + booking.status.slice(1) %>

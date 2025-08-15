@@ -13,6 +13,7 @@ const bookingSchema = new mongoose.Schema({
   message: { type: String },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, // optional if login is required
   createdAt: { type: Date, default: Date.now },
+  status: { type: String, default: "No Status", required: false },
 });
 
 module.exports = mongoose.model("Booking", bookingSchema);
