@@ -511,6 +511,7 @@
             align-items: center;
             margin-top: 1rem;
             padding-top: 1rem;
+            padding-bottom: 1rem;
             border-top: 1px dashed #e2e8f0;
         }
 
@@ -690,8 +691,9 @@
                     <div class="filter-group">
                         <h3>Booking Status</h3>
                         <ul class="filter-options">
-                            <li><a href="#" class="active"><i class="fas fa-list"></i> All Bookings <span
-                                        class="badge">12</span></a></li>
+                            <li><a href="#" class="active"><i class="fas fa-list"></i> All Bookings <span class="badge">
+                                        <%= bookings.length%>
+                                    </span></a></li>
                             <li><a href="#"><i class="fas fa-clock"></i> Upcoming <span class="badge">3</span></a></li>
                             <li><a href="#"><i class="fas fa-spinner"></i> In Progress <span class="badge">1</span></a>
                             </li>
@@ -733,7 +735,7 @@
 
                 <div class="bookings-main">
                     <div class="bookings-controls">
-                        <h2>All Bookings (12)</h2>
+                        <h2>All Bookings</h2>
                         <div class="search-box">
                             <i class="fas fa-search"></i>
                             <input type="text" placeholder="Search bookings...">
@@ -744,6 +746,12 @@
                         <% if (bookings && bookings.length> 0) { %>
                             <% bookings.forEach(function(booking) { %>
                                 <div class="booking-card">
+                                    <div class="booking-header">
+                                        <div class="booking-title">
+                                            <%=booking.service%>
+                                        </div>
+                                        <div class="booking-status status-upcoming">Upcoming</div>
+                                    </div>
 
                                     <div class="booking-details">
                                         <div class="detail-item">
@@ -773,10 +781,35 @@
                                             </div>
                                             <% } %>
                                     </div>
-                                    <form action="/bookings/<%= booking._id %>?_method=DELETE" method="POST"
-                                        style="margin-top:10px;">
-                                        <button type="submit" class="btn btn-outline">Cancel Booking</button>
-                                    </form>
+
+                                    <div class="professional-info">
+                                        <div class="professional-avatar">
+                                            <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=500"
+                                                alt="Professional">
+                                        </div>
+                                        <div class="professional-details">
+                                            <h4>Rajesh Kumar</h4>
+                                            <p>
+                                                <span class="professional-rating">
+                                                    <i class="fas fa-star"></i> 4.8
+                                                </span>
+                                                • 120 services
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="booking-actions">
+                                        <button class="btn btn-outline">View Details</button>
+                                        <button class="btn btn-outline">Reschedule</button>
+                                        <form action="/bookings/<%= booking._id %>?_method=DELETE" method="POST">
+                                            <button type="submit" class="btn btn-outline">Cancel Booking</button>
+                                        </form>
+
+                                        <button class="btn btn-outline">Message</button>
+                                    </div>
+
+
+
+
                                 </div>
                                 <% }); %>
                                     <% } else { %>
