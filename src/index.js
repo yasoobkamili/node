@@ -46,10 +46,6 @@ app.use("/booking", bookingRouter);
 
 app.use("/profile", profileRouter);
 
-app.get('/booking-history', (req, res) => {
-  res.render('booking-history');
-});
-
 // start server
 const port = 5000;
 app.listen(port, () => {
